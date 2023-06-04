@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+  First name:<br>
+  <input type="text" id="firstname"><br>
+  Last name:<br>
+  <input type="text" id="lastname"><br>
+  Phone number:<br>
+  <input type="text" id="phonenumber"><br><br>
+  <input type="submit" onclick="submitInfo()" value="Generate Password">
+
+</body>
+</html>
+
+<script>
+function submitInfo(){
+    var firstName = document.getElementById("firstname").value;
+    var lastName = document.getElementById("lastname").value;
+    var phoneNumber = document.getElementById("phonenumber").value;
+
+    var firstTwoCharsFirstName = firstName.slice(0, 2);
+    var firstTwoCharsLastName = lastName.slice(0, 2);
+    var lastFourDigitsPhoneNumber = phoneNumber.substring(phoneNumber.length - 4);
+
+    var htmlString =
+     
+     firstTwoCharsFirstName + firstTwoCharsLastName  + lastFourDigitsPhoneNumber;
+
+    alert("The Password Is "+htmlString);
+}
+</script>
